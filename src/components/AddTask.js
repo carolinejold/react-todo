@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function AddToDo({ addTask }) {
+const AddTask = ({ addTask }) => {
   const [value, setValue] = useState("");
 
   const handleChange = (e) => {
@@ -32,4 +32,6 @@ export default function AddToDo({ addTask }) {
       </form>
     </div>
   );
-}
+};
+
+export default AddTask;

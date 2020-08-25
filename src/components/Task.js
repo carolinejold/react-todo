@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Task({ task, index, toggleTask, deleteTask }) {
+const Task = ({ task, index, toggleTask, deleteTask }) => {
   return (
     <div
       className="todo-list-task"
@@ -15,7 +15,7 @@ export default function Task({ task, index, toggleTask, deleteTask }) {
           color: task.completed ? "black" : "",
         }}
       >
-        {task.title}
+        {task.taskName}
       </div>
       <button
         className="remove-button"
@@ -28,4 +28,6 @@ export default function Task({ task, index, toggleTask, deleteTask }) {
       </button>
     </div>
   );
-}
+};
+
+export default Task;

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import AddToDo from "./AddToDo";
+import AddToDo from "./AddTask";
 import Task from "./Task";
 
-export default function ToDoList() {
+const ToDoList = () => {
   const [tasks, setTasks] = useState([]);
 
-  const addTask = (title) => {
-    const newTasks = [...tasks, { title, completed: false }];
+  const addTask = (taskName) => {
+    const newTask = { taskName, completed: false };
+    const newTasks = [...tasks, newTask];
     setTasks(newTasks);
   };
 
@@ -24,22 +25,20 @@ export default function ToDoList() {
 
   return (
     <div>
-      <div>
-        <AddToDo addTask={addTask} />
+      <AddToDo addTask={addTask} />
+      <div className="todo-list">
+        {tasks.map((task, index) => (
+          <Task
+            task={task}
+            index={index}
+            key={index}
+            toggleTask={toggleTask}
+            deleteTask={deleteTask}
+          />
+        ))}
       </div>
-      {/* <div className="todo"> */}
-        <div className="todo-list">
-          {tasks.map((task, index) => (
-            <Task
-              task={task}
-              index={index}
-              key={index}
-              toggleTask={toggleTask}
-              deleteTask={deleteTask}
-            />
-          ))}
-        </div>
-      {/* </div> */}
     </div>
   );
-}
+};
+
+export default ToDoList;
