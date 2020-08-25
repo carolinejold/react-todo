@@ -1,5 +1,9 @@
 # react-todo
-Simple React todo list using Hooks
+Simple React todo list
+
+* ReactJS, Hooks
+* CSS3
+* Mobile Optimised
 
 https://react-todo-cjo.netlify.app/
 
